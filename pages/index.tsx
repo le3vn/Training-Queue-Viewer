@@ -21,7 +21,7 @@ const QueueSystem: React.FC = () => {
 
     const randomCashierIndex = Math.floor(Math.random() * 3);
     const updatedCashiers = [...cashiers];
-    updatedCashiers[randomCashierIndex].push(customerName.trim());
+    updatedCashiers[randomCashierIndex]?.push(customerName.trim());
     setCashiers(updatedCashiers);
     setCustomerName("");
     setErrorMessage("");
@@ -29,7 +29,7 @@ const QueueSystem: React.FC = () => {
 
   const handleRemoveCustomer = (cashierIndex: number) => {
     const updatedCashiers = [...cashiers];
-    updatedCashiers[cashierIndex].shift();
+    updatedCashiers[cashierIndex]?.shift();
     setCashiers(updatedCashiers);
   };
 
